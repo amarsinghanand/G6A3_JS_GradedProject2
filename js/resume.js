@@ -27,6 +27,8 @@ const loadResume = () => {
         container.style.display = 'block';
         noResultContainer.style.display = 'block';
         resumeContainerBody.style.display = 'none';
+        nextBtn.disabled = true;
+        previousBtn.disabled = true;
     } else {
         container.style.display = 'grid';
         noResultContainer.style.display = 'none';
@@ -103,9 +105,12 @@ searchField.addEventListener('input', (event) => {
                 .toLowerCase()
                 .includes(event.target.value.toLowerCase())
         );
+        if(resumeData.length > 0){
+            nextBtn.disabled = false;
+        }
         console.log('Searching...................resumeData :: ', resumeData); 
     }
-    resumeStartIndex = 0;
+    resumeStartIndex = 0;  
     loadResume();
     console.log('Searched.....................');
 });
