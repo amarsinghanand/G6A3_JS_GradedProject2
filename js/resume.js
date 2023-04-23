@@ -109,6 +109,8 @@ searchField.addEventListener('input', (event) => {
             nextBtn.disabled = false;
         }
         console.log('Searching...................resumeData :: ', resumeData); 
+    } else {
+        resumeData = data.resume; 
     }
     resumeStartIndex = 0;  
     loadResume();
